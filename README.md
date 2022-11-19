@@ -10,6 +10,8 @@ The script __detects the host's package manager__ and __deploys the apache webse
 
 ###### ABOUT USING
 
+Make sure you have __no services on 80 port__ to prevent script fails. 
+
 The __user__ u're running the script by should have __sudo privileges__.
 
 The changes to the index page are done by using sipmle heredoc syntax.
