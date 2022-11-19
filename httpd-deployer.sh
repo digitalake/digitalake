@@ -1,4 +1,5 @@
 #!/bin/bash
+### Checking host's pachage manager and setting up the package name
 lsb_release -is
 if [ -x "$(command -v apk)" ]; then 
     manager="apk"
@@ -17,12 +18,13 @@ elif [ -x "$(command -v zypper)" ];  then
     package="httpd"
 else echo -e "FAILED TO INSTALL PACKAGE: Package manager or Package not found.";
 fi
-sudo $manager update # apache installation, enabling and status check
+sudo $manager update # apache installation, enabling 
 sudo $manager -y install $package
 sudo systemctl start $package
 sudo systemctl enable $package
-sudo chown -R $USER:$USER /var/www
+sudo chown -R $USER:$USER /var/www # making changes to index.html avaliable
 cd /var/www/html/
+# Inserting custom simple html page
 cat << EOF > index.html
 <!DOCTYPE html>
 <html>
