@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-Theis script is the automation tool to deploy apache webserver with a simple changes to basic index.html page.
+This script is the automation tool to deploy apache webserver with a simple changes to basic index.html page.
 The script detects the host's package manager and deploys the apache webserver.
 
 !!!Important!!!
